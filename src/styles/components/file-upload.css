@@ -1,0 +1,220 @@
+/**
+ * ==========================================================================
+ * FILE-UPLOAD.CSS - Zone d'upload editorial
+ * ==========================================================================
+ */
+
+.file-upload {
+  position: relative;
+  width: 100%;
+}
+
+/* Dropzone */
+.file-upload__dropzone {
+  border: 1.5px dashed var(--line-soft);
+  border-radius: var(--r-md);
+  padding: 28px 20px;
+  text-align: center;
+  background: var(--paper);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-upload__dropzone:hover {
+  border-color: var(--ink-3);
+}
+
+.file-upload__dropzone--active {
+  border-color: var(--sage);
+  background: var(--sage-soft);
+}
+
+.dropzone__icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+}
+
+/* Hidden file input */
+.file-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Loading */
+.file-upload__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.loader--small {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+/* Errors */
+.file-upload__errors {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.file-upload__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--rust-soft);
+  border-radius: var(--r-sm);
+  color: var(--rust);
+  font-size: 13px;
+}
+
+.file-upload__error-icon {
+  flex-shrink: 0;
+}
+
+/* Checklist */
+.file-upload__checklist {
+  margin-top: 16px;
+  border-top: 1px solid var(--line-hair);
+  padding-top: 16px;
+}
+
+.file-upload__checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.file-upload__checklist-count {
+  background: var(--paper-2);
+  padding: 2px 8px;
+  border-radius: var(--r-sm);
+  font-size: 11px;
+}
+
+.file-upload__checklist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-upload__checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-sm);
+  background: var(--paper);
+  transition: all 120ms;
+}
+
+.file-upload__checklist-item--loaded {
+  background: var(--sage-soft);
+  border-color: transparent;
+}
+
+.file-upload__checklist-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--ink-mute);
+  flex-shrink: 0;
+}
+
+.file-upload__checklist-item--loaded .file-upload__checklist-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.file-upload__checklist-name {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.file-upload__checklist-item--loaded .file-upload__checklist-name {
+  color: var(--forest);
+}
+
+.file-upload__checklist-reset {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: var(--r-sm);
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: all 120ms;
+}
+
+.file-upload__checklist-reset:hover {
+  background: var(--rust-soft);
+  color: var(--rust);
+}
+
+.file-upload__checklist-item--optional {
+  background: var(--paper);
+  border: 1px dashed var(--line-soft);
+}
+
+.file-upload__checklist-item--optional.file-upload__checklist-item--loaded {
+  background: var(--sage-soft);
+  border-style: solid;
+  border-color: transparent;
+}
+
+.file-upload__optional-tag {
+  font-size: 11px;
+  color: var(--ink-mute);
+  font-weight: 400;
+  font-style: italic;
+}
