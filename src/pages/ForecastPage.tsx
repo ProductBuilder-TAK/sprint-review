@@ -18,13 +18,13 @@ export function ForecastPage() {
 
   // Compute forecast data
   const forecastData = useMemo(() => {
-    if (!csvLoaded || !csvData?.sprintReview) return null
+    if (!csvLoaded || !csvData?.tickets) return null
 
     try {
-      const sprintReview = csvData.sprintReview as { tickets: unknown[] }
+      const tickets = csvData.tickets as unknown[]
       const reviewSprintNum = selectedSprint
 
-      return forecastService.prepareForecastData(sprintReview.tickets, {
+      return forecastService.prepareForecastData(tickets, {
         reviewSprint: reviewSprintNum,
       })
     } catch (err) {

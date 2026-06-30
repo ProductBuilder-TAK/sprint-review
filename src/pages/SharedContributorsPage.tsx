@@ -12,10 +12,10 @@ export function SharedContributorsPage() {
   const csvLoaded = useAppStore((s) => s.csvLoaded)
 
   const contributors = useMemo(() => {
-    if (!csvLoaded || !csvData?.sprintReview) return null
+    if (!csvLoaded || !csvData?.tickets) return null
 
     try {
-      const { tickets } = csvData.sprintReview as { tickets: any[] }
+      const tickets = csvData.tickets as any[]
       const sprintData = aggregateBySprint(tickets)
       const sprintNums = sprintData.map((s: any) => s.sprint).slice(-6)
 
